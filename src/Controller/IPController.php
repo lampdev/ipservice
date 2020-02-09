@@ -33,4 +33,13 @@ class IPController extends AbstractFOSRestController {
 
     return $this->handleView($this->view($ip));
   }
+
+  /**
+   * Exception action
+   *
+   * @return Response
+   */
+  public function exception(): Response {
+    return $this->handleView($this->view("IP error"));
+  }
 }
