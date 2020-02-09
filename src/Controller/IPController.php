@@ -21,12 +21,11 @@ class IPController extends AbstractFOSRestController {
    *
    * @Rest\Get("/ip.{_format}?name={name}")
    *
-   * @param Response $response instance of symfony response
    * @param string   $name     optional name argument
    *
    * @return Response
    */
-  public function ip(Response $response, string $name = null): Response {
+  public function ip(string $name = null): Response {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
       $ip = $_SERVER['HTTP_CLIENT_IP'];
     } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -35,18 +34,15 @@ class IPController extends AbstractFOSRestController {
       $ip = $_SERVER['REMOTE_ADDR'];
     }
 
-    $response->headers->add(
-        [
-            'x-hello-world' => 'I.K.'
-        ]
-    );
     $json = [
         'ip' => $ip
     ];
-    if (($name = $request->get('name'))) {
+    if ($name) {
       $json['greeting'] = 'Hello ' . $name;
     }
 
-    return $this->handleView($this->view($json));
+    return $this->handleView($this->view($json, Response::HTTP_OK, [
+        'x-hello-world' => 'I.K.'
+    ]));
   }
 }
