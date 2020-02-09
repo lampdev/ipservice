@@ -43,7 +43,7 @@ class IPController extends AbstractFOSRestController {
         'ip' => $ip
     ];
     if (($name = $request->get('name'))) {
-      $json['greeting'] = 'Hello ' . $name
+      $json['greeting'] = 'Hello ' . $name;
     }
 
     return $this->handleView($this->view($json));
