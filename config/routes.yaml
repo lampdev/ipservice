@@ -1,3 +1,4 @@
 ip:
     path: /
-    controller: App\Controller\IPController::index
+    type: rest
+    resource: App\Controller\IPController
