@@ -22,7 +22,7 @@ class IPController extends AbstractFOSRestController {
    * @Rest\Get("/ip.{_format}?name={name}")
    *
    * @param Response $response instance of symfony response
-   * @param string $name optional name argument
+   * @param string   $name     optional name argument
    *
    * @return Response
    */
