@@ -27,10 +27,8 @@ fos_rest:
       - { path: ^/, priorities: [ json ], fallback_format: ~, prefer_extension: true }
   exception:
     enabled: true
-      exception_controller: 'App\Controller\IPController::exception'
     codes:
       'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
-      'Doctrine\ORM\OptimisticLockException': HTTP_BAD_REQUEST
     messages:
       'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
   allowed_methods_listener: true
