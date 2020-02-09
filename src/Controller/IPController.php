@@ -38,7 +38,7 @@ class IPController extends AbstractFOSRestController {
     $json = [
         'ip' => $ip
     ];
-    if (($name = $page = $paramFetcher->get('name'))) {
+    if (($name = $paramFetcher->get('name'))) {
       $json['greeting'] = 'Hello ' . $name;
     }
 
