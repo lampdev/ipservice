@@ -18,7 +18,6 @@ class IPController extends AbstractFOSRestController {
    * REST action which returns client's IP address.
    * Method: GET, url: /ip.{_format}
    *
-   * @Rest\Get("/ip.{_format}")
    * @Rest\QueryParam(name="page", requirements="\d+", default="1", description="Page of the overview.")
    *
    * @param ParamFetcher $paramFetcher  FOR REST bundle param fetcher
