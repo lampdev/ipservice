@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  description: "Test Task"
+  version: "0.0.1"
+  title: "Test microservice returning client IP"
+  contact:
+    email: "orders@lamp-dev.com"
+host: "ip.lamp-dev.com"
+basePath: "/"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /:
+    get:
+      summary: "Get client IP address"
+      description: ""
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          type: "string"
+          name: "name"
+          description: "Optional name parameter"
+          required: false
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/IP"
+        500:
+          description: "IP error"
+definitions:
+  IP:
+    type: "object"
+    required:
+      - ip
+    properties:
+      ip:
+        type: "string"
+      greeting:
+        type: "string"
