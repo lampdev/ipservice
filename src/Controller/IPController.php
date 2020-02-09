@@ -4,9 +4,8 @@
  */
 namespace App\Controller;
 
-use FOS\RestBundle\Controller\AbstractFOSRestController;
+use FOS\RestBundle\Controller\{AbstractFOSRestController, Annotations as Rest};
 use Symfony\Component\HttpFoundation\Response;
-use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\Routing\Annotation\Route;
 use FOS\RestBundle\Request\ParamFetcher;
 
@@ -20,7 +19,7 @@ class IPController extends AbstractFOSRestController {
    * Method: GET, url: /ip.{_format}
    *
    * @Rest\Get("/ip.{_format}")
-   * @Rest\QueryParam(name="name", default=null, nullable=true)
+   * @Rest\QueryParam(name="name")
    *
    * @param ParamFetcher $paramFetcher  FOR REST bundle param fetcher
    *
