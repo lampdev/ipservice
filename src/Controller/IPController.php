@@ -19,7 +19,7 @@ class IPController extends AbstractFOSRestController {
    * Method: GET, url: /ip.{_format}
    *
    * @Rest\Get("/ip.{_format}")
-   * @Rest\QueryParam(name="name")
+   * @Rest\QueryParam(name="page", requirements="\d+", default="1", description="Page of the overview.")
    *
    * @param ParamFetcher $paramFetcher  FOR REST bundle param fetcher
    *
@@ -37,8 +37,8 @@ class IPController extends AbstractFOSRestController {
     $json = [
         'ip' => $ip
     ];
-    /*var_dump($paramFetcher->get('name'));die();
-    if (($name = $paramFetcher->get('name'))) {
+    var_dump($paramFetcher->get('page'));die();
+    /*if (($name = $paramFetcher->get('name'))) {
       $json['greeting'] = 'Hello ' . $name;
     }*/
 
