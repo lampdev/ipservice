@@ -2,6 +2,7 @@
 /**
  * Class IPController
  */
+namespace App\Controller;
 
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\Response;
